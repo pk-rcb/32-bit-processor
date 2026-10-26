@@ -1,0 +1,70 @@
+[*]
+[*] GTKWave Analyzer Configuration File for 32-bit MIPS Processor
+[*]
+[dumpfile] "mips_processor.vcd"
+[savefile] "tb/gtkwave_signals.gtkw"
+[timestart] 0
+[size] 1600 900
+[pos] -1 -1
+*-signals-width-bits
+*
+* Clock and Reset
+*
+MIPS_Processor_tb.clk
+MIPS_Processor_tb.reset
+@22
+*
+* IF Stage
+*
+MIPS_Processor_tb.probe_PC[31:0]
+MIPS_Processor_tb.probe_instruction[31:0]
+@28
+MIPS_Processor_tb.probe_Stall
+@22
+*
+* ID Stage (Register File)
+*
+MIPS_Processor_tb.uut.regfile.ReadReg1[4:0]
+MIPS_Processor_tb.uut.regfile.ReadData1[31:0]
+MIPS_Processor_tb.uut.regfile.ReadReg2[4:0]
+MIPS_Processor_tb.uut.regfile.ReadData2[31:0]
+@28
+MIPS_Processor_tb.uut.main_control.RegWrite
+MIPS_Processor_tb.uut.main_control.ALUSrc
+MIPS_Processor_tb.uut.main_control.Branch
+@22
+*
+* EX Stage (ALU & Forwarding)
+*
+MIPS_Processor_tb.uut.EX_ALU_InA[31:0]
+MIPS_Processor_tb.uut.EX_ALU_InB[31:0]
+@28
+MIPS_Processor_tb.uut.ForwardA[1:0]
+MIPS_Processor_tb.uut.ForwardB[1:0]
+MIPS_Processor_tb.uut.EX_ALUControl[2:0]
+@22
+MIPS_Processor_tb.uut.EX_ALUResult[31:0]
+@28
+MIPS_Processor_tb.uut.EX_Zero
+@22
+*
+* MEM Stage (Data Memory & Branch)
+*
+@28
+MIPS_Processor_tb.uut.EX_MEM_MemRead
+MIPS_Processor_tb.uut.EX_MEM_MemWrite
+MIPS_Processor_tb.uut.PCSrc
+@22
+MIPS_Processor_tb.uut.EX_MEM_ALUResult[31:0]
+MIPS_Processor_tb.uut.EX_MEM_WriteData[31:0]
+MIPS_Processor_tb.uut.MEM_MemReadData[31:0]
+*
+* WB Stage (Writeback to RegFile)
+*
+@28
+MIPS_Processor_tb.probe_RegWrite
+@22
+MIPS_Processor_tb.probe_WriteReg[4:0]
+MIPS_Processor_tb.probe_WriteData[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

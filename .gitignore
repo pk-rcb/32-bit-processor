@@ -1,0 +1,21 @@
+# Simulation binaries and waveform dumps
+*.vvp
+*.vcd
+sim.vvp
+mips_processor.vcd
+*.dump
+
+# Log and temporary files
+*.log
+*.tmp
+
+# Operating system files
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+*.swp
+*~
